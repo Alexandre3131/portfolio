@@ -1,7 +1,9 @@
 .accueil {
-  text-align: center;
   padding: 50px;
-  background-color: #f5f5f5;
+}
+
+.titre {
+  text-align: center;
 }
 
 h1 {
@@ -16,13 +18,39 @@ p {
 button {
   padding: 10px 20px;
   font-size: 1em;
-  background-color: #007bff;
-  color: white;
+  background-color: #8B4513 ;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #8B4513 ;
+  color: #ffffff;
 }
+
+.intro-section {
+  display: flex;
+  justify-content: space-between; /* Espace entre le texte et l'image */
+  align-items: center; /* Aligner verticalement au centre */
+  padding: 20px;
+}
+
+.intro-text {
+  max-width: 50%; /* Limiter l'espace occupé par le texte */
+  font-size: 1.5rem;
+  /*color: #8B4513;  Ajuste la couleur selon ton design */
+}
+
+.intro-photo {
+  margin-right: 150px;
+}
+
+.photo {
+  width: 300px; /* Taille augmentée */
+  height: 300px; /* Assure-toi que c'est un carré pour garder la forme hexagonale */
+  object-fit: cover; /* Maintient le cadrage de l'image à l'intérieur */
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+

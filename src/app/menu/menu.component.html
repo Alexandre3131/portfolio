@@ -1,19 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Compteur tarot</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand">Alexandre Benachir</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/parties">Liste des parties</a>
+          <a class="nav-link" routerLink="/" aria-current="page">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/parties/new">Nouvelle partie</a>
+          <a class="nav-link" routerLink="/cv" routerLinkActive="active">Mon CV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/regles">Les règles</a>
+          <a class="nav-link" routerLink="/skills" routerLinkActive="active">Compétences</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/projects" routerLinkActive="active">Projets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
         </li>
       </ul>
     </div>

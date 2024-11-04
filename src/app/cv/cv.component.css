@@ -1,0 +1,36 @@
+.cv-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff; /* Fond blanc pour la lisibilité */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.cv-container h2 {
+  color: #8B4513; /* Couleur marron pour le titre */
+  margin-bottom: 20px;
+}
+
+.cv-iframe {
+  width: 100%;
+  height: 600px; /* Ajuste la hauteur selon tes besoins */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.download-btn {
+  font-size: 1.25rem;
+  padding: 10px 20px;
+  background-color: #8B4513;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #a0522d; /* Couleur marron plus foncée au survol */
+}
