@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
@@ -15,8 +16,13 @@ export class ContactComponent {
   email: string = '';
   subject: string = '';
   message: string = '';
+  isSent: boolean = false;
+  isLoading: boolean = false;
+  error: boolean = false;
 
   sendEmail() {
+    this.isLoading=true;
+
     const templateParams = {
       from_name: this.name,
       from_last_name: this.last_name,
@@ -33,17 +39,17 @@ export class ContactComponent {
         'NKmmDveLfsp7WB6Tz'
       )
       .then(
-        (response) => {
-          console.log(
-            'Email envoyé!',
-            response.status,
-            response.text
-          );
-          alert('Votre message a été envoyé avec succès !');
+        () => {
+          this.isSent = true;
+          this.name = '';
+          this.last_name = '';
+          this.email = '';
+          this.subject = '';
+          this.message = '';
+          this.isLoading=false;
         },
-        (error) => {
-          console.error('Echec de l\'envoi du email', error);
-          alert("Échec de l'envoi du message. Veuillez réessayer.");
+        () => {
+          this.error = true;
         }
       );
   }

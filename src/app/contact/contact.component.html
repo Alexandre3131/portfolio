@@ -1,26 +1,49 @@
-<div class="contact-container">
+<div class="contact-container fade-in">
   <h2>Contactez-moi</h2>
-  <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
-    <div class="form-row"> <!-- Nouvelle classe pour le conteneur -->
-      <div class="form-group col"> <!-- Colonne pour Prénom -->
+
+  <div *ngIf="isSent" class="alert alert-success">
+    Votre message a été envoyé avec succès !
+  </div>
+  <div *ngIf="error" class="alert alert-danger">
+    Votre message n'a pas pu être envoyé !<br>
+    <strong>Contactez-moi ici : </strong><a href="mailto:alexandre.benachir@gmail.com">alexandre.benachir&#64;gmail.com</a>
+  </div>
+  <div *ngIf="isLoading" class="loading-overlay">
+    <i class="fas fa-spinner fa-spin fa-3x"></i>
+  </div>
+  <form *ngIf="!isSent && !error && !isLoading" (ngSubmit)="sendEmail()" #contactForm="ngForm">
+    <div class="form-row">
+      <div class="form-group col">
         <label for="name">Prénom</label>
-        <input type="text" id="name" class="form-control" [(ngModel)]="name" name="name" required>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+          <input type="text" id="name" class="form-control" placeholder="Votre prénom" [(ngModel)]="name" name="name" required>
+        </div>
       </div>
 
-      <div class="form-group col"> <!-- Colonne pour Nom -->
+      <div class="form-group col">
         <label for="last_name">Nom</label>
-        <input type="text" id="last_name" class="form-control" [(ngModel)]="last_name" name="last_name" required>
+        <div class="input-icon">
+          <input type="text" id="last_name" class="form-control" placeholder="Votre nom" [(ngModel)]="last_name" name="last_name" required>
+          <i class="fas fa-user"></i>
+        </div>
       </div>
     </div>
 
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required>
+      <div class="input-icon">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" class="form-control" placeholder="exemple@gmail.com" [(ngModel)]="email" name="email" required>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="subject">Objet</label>
-      <input type="text" id="subject" class="form-control" [(ngModel)]="subject" name="subject" required>
+      <div class="input-icon">
+        <i class="fas fa-tag"></i>
+        <input type="text" id="subject" class="form-control" placeholder="Titre" [(ngModel)]="subject" name="subject" required>
+      </div>
     </div>
 
     <div class="form-group">

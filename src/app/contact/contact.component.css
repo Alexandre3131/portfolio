@@ -5,21 +5,28 @@
   border-radius: 8px;
 }
 
+.fade-in {
+  animation: fadeInZoomAnimation 1s ease-out;
+}
+
+@keyframes fadeInZoomAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.9); /* Légère réduction initiale */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Taille normale */
+  }
+}
+
 h2 {
   text-align: center;
   color: #8B4513;
 }
 
 .form-group {
-  margin-bottom: 15px;
-}
-
-.btn-primary {
-  display: block;
-  width: 100%;
-  background-color: #8B4513;
-  border-color: #8B4513;
-  color: white;
+  margin-bottom: 20px;
 }
 
 .form-row {
@@ -35,3 +42,89 @@ h2 {
 .form-group.col:last-child {
   margin-right: 0; /* Supprime la marge à droite pour le dernier champ */
 }
+
+.form-control {
+  border: 1px solid #8B4513; /* Bordure initiale */
+  padding: 10px; /* Pour plus de confort dans le champ */
+  border-radius: 4px;
+  transition: border-color 0.3s; /* Animation douce */
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #5D2E0B; /* Couleur de bordure plus foncée au focus */
+  box-shadow: 0 0 5px rgba(93, 46, 11, 0.5); /* Légère ombre pour l'accentuation */
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  background-color: #8B4513;
+  border-color: #8B4513;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Animation douce */
+}
+
+.btn-primary:hover {
+  background-color: #A55A3C; /* Couleur légèrement plus claire au survol */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px; /* Positionne l'icône à l'intérieur du champ */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8B4513; /* Couleur de l'icône */
+}
+
+.input-icon .form-control {
+  padding-left: 35px; /* Espace pour l'icône */
+}
+
+#message {
+  height: 300px;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-overlay i {
+  font-size: 5rem;
+  color: #8B4513;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px; /* Positionne l'icône à l'intérieur du champ */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8B4513; /* Couleur de l'icône */
+  font-size: 1.2rem; /* Taille de l'icône */
+  pointer-events: none; /* Évite que l'icône interfère avec le clic dans le champ */
+}
+
+.input-icon .form-control {
+  padding-left: 35px; /* Espace pour l'icône à l'intérieur du champ */
+}
+

@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" aria-current="page">Accueil</a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-current="page">Accueil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/cv" routerLinkActive="active">Mon CV</a>
